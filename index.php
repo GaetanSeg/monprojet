@@ -1,67 +1,57 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <title>Index</title>
-    </head>
-    <body>
-        <div>Un "hello world" en html</div>
-        <?php echo 'Un second "hello world" en php'; ?>
-        <h2>Les variables en php</h2>
-<?php
-//String
-$variable = 'Jean';
-$variable = "Jean";
-echo $variable;
-//Retour à la ligne (balise html)
-echo "<br/>";
-//Integer
-$variable = 2;
-echo $variable;
-echo "<br/>";
-//Float
-$variable = 2.4;
-echo $variable;
-echo "<br/>";
-//Boolean
-$variable = true;
-echo $variable;
-echo "<br/>";
-//Null
-$variable = NULL;
-echo $variable;
-echo "<br/>";
-//Concaténation
-$age_du_visiteur = 25;
-echo "Le visiteur a $age_du_visiteur ans";
-echo "<br/>";
-echo 'Le visiteur a $age_du_visiteur ans'; // Ne fonctionne pas avec simple guillemet
-echo "<br/>";
-echo "Le visiteur a ".$age_du_visiteur." ans";
-echo "<br/>";
-echo 'Le visiteur a '.$age_du_visiteur.' ans'; // Par contre là ça fonctionne avec simple guillemet ! Magique !
-//Liste et tableau (dictionnaire)
-$fruits = array (
-    "fruits"  => array("a" => "orange", "b" => "banana", "c" => "apple"),
-    "numbers" => array(1, 2, 3, 4, 5, 6),
-    "holes"   => array("first", 5 => "second", "third")
-);
-echo "<br/>";
-echo $fruits;
-echo "<br/>";
-print $fruits;
-echo "<br/>";
-print_r($fruits);
-echo "<br/>";
-//Et depuis php5.4, vous pouvez également utiliser la syntaxe courte, qui remplace array() par [].
-$array = [
-    "foo" => "bar",
-    "bar" => "foo",
-];
-echo $array["foo"];
-echo $array[0]; //Ne retourne rien car la clé 0 n'existe pas. Il s'agit d'un tableau et non d'une liste.
-echo "<br/>";
-echo $fruits["numbers"][0];
-?>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <title>php test</title>
+    <link href="sticky-footer-navbar.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <header>
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">PHP TEST</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+        </div>
+      </nav>
+    </header>
+
+    <!-- Begin page content -->
+    <main role="main" class="container">
+      <br><br><br>
+      <h3>Formulaire en Get </h3>
+      <form class="" action="welcome" method="get">
+        <div> prenom : <input type="text" name="prénom" > </div><br>
+        <input type="submit">
+      </form>
+      <h3>Formulaire en Post </h3>
+      <form class="" action="welcome" method="post">
+        <div> prenom : <input type="text" name="prénom" > </div><br>
+        <input type="submit">
+      </form>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+</body>
 </html>
