@@ -1,1 +1,3 @@
-<div class=""> contenu</div>
+<div class="">
+  <h2> <?= $content;  ?> </h2>
+</div>
