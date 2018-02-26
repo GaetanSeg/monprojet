@@ -1,3 +1,7 @@
-<div >
-  <h2> <?= $content;  ?> </h2>
+<div class="container" >
+
+  <h1><?= $title; ?></h1>
+  <?php echo $content; ?>
+
+
 </div>
