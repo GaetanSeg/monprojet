@@ -15,7 +15,7 @@
       <?php if (!empty($_SESSION['login'])) {
 
         echo "<li><a href=\"admin.php\">Administration</a></li>";
-        echo "<a href=\"logout.php\">Se déconnecter</a>";
+        echo "<li><a href=\"logout.php\">Se déconnecter</a>/li>";
 
         }
       ?>
