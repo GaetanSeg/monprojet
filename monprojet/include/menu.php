@@ -12,11 +12,25 @@
           <li><a href="#">Page 1-3</a></li>
         </ul>
       </li>
-      <li><a href="#">Administration</a></li>
+      <?php if (!empty($_SESSION['login'])) {
+
+        echo "<li><a href=\"admin.php\">Administration</a></li>";
+        echo "<a href=\"logout.php\">Se déconnecter</a>";
+
+        }
+      ?>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="register.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <?php
+  // On teste si la variable de session existe et contient une valeur
+            if(empty($_SESSION['login']))
+            {
+                echo "<li><a href=\"login.php\"><span class=\"glyphicon glyphicon-log-in\"></span>Login</a></li>";
+
+            }
+            //echo "<br>";
+            //echo password_hash("tata", PASSWORD_DEFAULT);
+      ?>
     </ul>
   </div>
 </nav>
