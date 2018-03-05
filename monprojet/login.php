@@ -2,6 +2,16 @@
 <?php ob_start(); ?>
 <?php
 // Definition des constantes et variables
+
+    try {
+        $db = new PDO('mysql:host=localhost;dbname=projet;charset=UTF-8', 'root', '') , array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXECPTION));
+
+      die(' erreur ; '.$e->getMessage());
+
+    }
+
+
+
     define('LOGIN','toto');
     //define('PASSWORD','tata');
     define('PASSWORD', '$2y$10$jz30CnGsYVR.7.a4o31sTufzJYEqXpwfa7IuRSZfPqTBN8TQ/CdR6');
