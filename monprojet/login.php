@@ -1,51 +1,40 @@
 <?php $title = 'Index'; ?>
 <?php ob_start(); ?>
 <?php
-// Definition des constantes et variables
-
-    try {
-        $db = new PDO('mysql:host=localhost;dbname=projet;charset=UTF-8', 'root', '') , array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXECPTION));
-
-      die(' erreur ; '.$e->getMessage());
-
+$login= NULL;
+    try
+    {
+      //ouverture d'un porte dans une db
+    	$bdd = new PDO('mysql:host=localhost;dbname=projet;charset=utf8', 'root', '');
+    }
+    catch (Exception $e)
+    {
+            die('Erreur : '. $e->getMessage());
     }
 
+    $myReq = $bdd->prepare('SELECT * FROM user WHERE login = :login');//  les ":login" sert a dire que indiquer que login serra remplacer lors de l'execution de la requete
+    $myReq->execute(array('login' => $_POST['login']));//remplacement de login par le login du form
+    $resultat = $myReq->fetch();
 
+    // Comparaison du pass envoyé via le formulaire avec la base
+    $isPasswordCorrect = password_verify($_POST['password'], $resultat['password']);
 
-    define('LOGIN','toto');
-    //define('PASSWORD','tata');
-    define('PASSWORD', '$2y$10$jz30CnGsYVR.7.a4o31sTufzJYEqXpwfa7IuRSZfPqTBN8TQ/CdR6');
-    $errorMessage = '';
-    // Test de l'envoi du formulaire
-    if(!empty($_POST))
+    if (!$resultat)
     {
-        // Les identifiants sont transmis ?
-        if(!empty($_POST['login']) && !empty($_POST['password']))
-        {
-            // Sont-ils les mêmes que les constantes ?
-            if($_POST['login'] !== LOGIN)
-            {
-                $errorMessage = 'Mauvais login !';
-            }
-            elseif(!password_verify($_POST['password'], PASSWORD))
-    //        elseif($_POST['password'] !== PASSWORD)
-            {
-                $errorMessage = 'Mauvais password !';
-            }
-            else
-            {
-                // On ouvre la session
-                session_start();
-                // On enregistre le login en session
-                $_SESSION['login'] = LOGIN;
-                // On redirige vers le fichier index.php
-                header('Location: index.php');
-                exit();
-            }
+        echo 'Mauvais identifiant ou mot de passe !';
+    }
+    else
+    {
+        if ($isPasswordCorrect) {
+            session_start();
+            $_SESSION['id'] = $resultat['id'];
+            $_SESSION['login'] = LOGIN ;
+            echo 'Vous êtes connecté !';
+            header('Location: index.php');
+            exit();
         }
-        else
-        {
-            $errorMessage = 'Veuillez inscrire vos identifiants svp !';
+        else {
+            echo 'Mauvais identifiant ou mot de passe !';
         }
     }
 ?>

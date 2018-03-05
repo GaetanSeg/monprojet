@@ -28,8 +28,8 @@
                 echo "<li><a href=\"login.php\"><span class=\"glyphicon glyphicon-log-in\"></span>Login</a></li>";
 
             }
-            echo "<br>";
-            echo password_hash("tata", PASSWORD_DEFAULT);
+            /*echo "<br>";
+            echo password_hash("tata", PASSWORD_DEFAULT);*/
       ?>
     </ul>
   </div>
