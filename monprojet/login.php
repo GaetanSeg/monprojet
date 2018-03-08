@@ -11,6 +11,9 @@
     {
             die('Erreur : '. $e->getMessage());
     }
+    if (!empty($_POST)) {
+
+
     $login= "";
     $password="";
 
@@ -38,6 +41,7 @@
         else {
             echo 'Mauvais identifiant ou mot de passe !';
         }
+    }
     }
 ?>
 <?php
