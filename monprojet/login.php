@@ -1,48 +1,7 @@
 <?php $title = 'Index'; ?>
 <?php ob_start(); ?>
 <?php
-
-    try
-    {
-      //ouverture d'un porte dans une db
-    	$bdd = new PDO('mysql:host=localhost;dbname=projet;charset=utf8', 'root', '');
-    }
-    catch (Exception $e)
-    {
-            die('Erreur : '. $e->getMessage());
-    }
-    if (!empty($_POST)) {
-
-
-    $login= "";
-    $password="";
-
-    $myReq = $bdd->prepare('SELECT * FROM user WHERE login = :login');//  les ":login" sert a dire que indiquer que login serra remplacer lors de l'execution de la requete
-    $myReq->execute(array('login' => $_POST['login']));//remplacement de login par le login du form
-    $resultat = $myReq->fetch();
-
-    // Comparaison du pass envoyé via le formulaire avec la base
-    $isPasswordCorrect = password_verify($_POST['password'], $resultat['password']);
-
-    if (!$resultat)
-    {
-        echo 'Mauvais identifiant ou mot de passe !';
-    }
-    else
-    {
-        if ($isPasswordCorrect) {
-            session_start();
-            $_SESSION['id'] = $resultat['id'];
-            $_SESSION['login'] = LOGIN ;
-            echo 'Vous êtes connecté !';
-            header('Location: index.php');
-            exit();
-        }
-        else {
-            echo 'Mauvais identifiant ou mot de passe !';
-        }
-    }
-    }
+      require 'tools/connectSession.php';
 ?>
 <?php
 // Rencontre-t-on une erreur ?
