@@ -13,10 +13,9 @@
         </ul>
       </li>
       <?php if (!empty($_SESSION['login'])) {
-
         echo "<li><a href=\"admin.php\">Administration</a></li>";
         echo "<li><a href=\"logout.php\">Se déconnecter</a>/li>";
-
+        echo "<li><a><span>Bienvenue</span> ".$_SESSION['login']."</a>/li>";
         }
       ?>
     </ul>

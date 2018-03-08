@@ -1,4 +1,4 @@
-<?php $title = 'Index'; ?>
+<?php $title = 'PHP projet'; ?>
 <?php ob_start(); ?>
 
 <h3>Panneau d'administration</h3>
