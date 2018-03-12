@@ -8,7 +8,9 @@
 
       if (!$resultat)
       {
-          echo 'Mauvais identifiant ou mot de passe !';
+          echo "<div class=\"alert alert-danger\">
+                  <strong>OUPS!</strong> Mauvais identifiant ou mot de passe !.
+                </div>";
       }
       else
       {
@@ -16,12 +18,17 @@
               session_start();
               $_SESSION['id'] = $resultat['id'];
               $_SESSION['login'] = $resultat['login'];
-              echo 'Vous êtes connecté !';
               header('Location: index.php');
+              echo "<div class=\"alert alert-success\">
+                      <strong>Bravo!</strong> Vous êtes connecté !.
+                    </div>";
               exit();
           }
           else {
-              echo 'Mauvais identifiant ou mot de passe !';
+            echo "<div class=\"alert alert-danger\">
+                    <strong>OUPS!</strong> Mauvais identifiant ou mot de passe !.
+                  </div>";
+
           }
       }
       }

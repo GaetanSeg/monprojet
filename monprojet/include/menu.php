@@ -28,7 +28,7 @@
 
             }
             /*echo "<br>";
-            echo password_hash("tata", PASSWORD_DEFAULT);*/
+            echo password_hash("minet", PASSWORD_DEFAULT);*/
       ?>
     </ul>
   </div>
