@@ -18,10 +18,9 @@
         while ($donnees = $reponse->fetch())
         {
 
-          echo '<form action="" method="post">
-          <b>ID</b> : <input type="text" name="id" value="'.$donnees['id'].'"/>
+          echo '<form action="editUser.php" method="get">
+          <b>ID</b> : <input type="text" name="id" placeholder="'.$donnees['id'].'"/>
           <b>Login</b> : <input type="text" name="login" value="'.$donnees['login'].'"/>
-          <b>Password</b> : <input type="password" name="password" value="'.$donnees['password'].'"/>
           <input type="submit"/>
           <hr>
           </form>';
