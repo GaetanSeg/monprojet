@@ -1,6 +1,5 @@
 <?php
-require 'tools/connectDb.php';
-
+  require 'tools/connectDb.php';
 
   $bdd = getDataBase();
 
