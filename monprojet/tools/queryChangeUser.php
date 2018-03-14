@@ -18,12 +18,12 @@
         while ($donnees = $reponse->fetch())
         {
 
-          echo "<form action=\"editUser.php\" method=\"get\">
-                <b>ID</b> : <input type=\"text\" class=\"form-control\" disabled=\"disabled\"  name=\"id\" value=\"".$donnees['id']."\"/><br>
-                <b>Login</b> : <input type=\"text\" class=\"form-control\" name=\"login\" value=\"".$donnees['login']."\"/><br>
-                <button type=\"submit\" class=\"btn btn-primary\">Modifier</button></form>
+          echo '<form action="editUser.php" method="get">
+                <b>ID</b> : <input type="text" class="form-control" disabled="disabled"  name="id" value="'.$donnees['id'].'"/><br>
+                <b>Login</b> : <input type="text" class="form-control" name="login" value="'.$donnees['login'].'"/><br>
+                <button type="submit" class="btn btn-primary">Modifier</button></form>
                 <hr>
-                </form>";
+                </form>';
 
         }
         $reponse->closeCursor();
