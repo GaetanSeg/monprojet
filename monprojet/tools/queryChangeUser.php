@@ -19,7 +19,7 @@
         {
 
           echo '<form action="editUser.php" method="get">
-          <b>ID</b> : <input type="text" name="id" placeholder="'.$donnees['id'].'"/>
+          <b>ID</b> : <input type="text" name="id" value="'.$donnees['id'].'"/>
           <b>Login</b> : <input type="text" name="login" value="'.$donnees['login'].'"/>
           <input type="submit"/>
           <hr>
