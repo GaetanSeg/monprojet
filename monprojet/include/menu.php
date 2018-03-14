@@ -25,7 +25,7 @@
             if(empty($_SESSION['login']))
             {
                 echo "<li><a href=\"login.php\"><span class=\"glyphicon glyphicon-log-in\"></span>Login</a></li>";
-
+                echo "<li><a href=\"register.php\"><span class=\"glyphicon glyphicon-log-in\"></span>inscriptions</a></li>";
             }
             /*echo "<br>";
             echo password_hash("minet", PASSWORD_DEFAULT);*/

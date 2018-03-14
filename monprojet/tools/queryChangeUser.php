@@ -19,11 +19,11 @@
         {
 
           echo '<form action="editUser.php" method="get">
-          <b>ID</b> : <input type="text"  disabled="disabled"  name="id" value="'.$donnees['id'].'"/>
-          <b>Login</b> : <input type="text" name="login" value="'.$donnees['login'].'"/>
-          <input type="submit"/>
-          <hr>
-          </form>';
+                <b>ID</b> : <input type="text" class="form-control" disabled="disabled"  name="id" value="'.$donnees['id'].'"/><br>
+                <b>Login</b> : <input type="text" class="form-control" name="login" value="'.$donnees['login'].'"/><br>
+                <button type="submit" class="btn btn-primary">Modifier</button></form>
+                <hr>
+                </form>';
 
         }
         $reponse->closeCursor();
